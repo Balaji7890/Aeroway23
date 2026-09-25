@@ -148,7 +148,7 @@ function MyPlan() {
                   );
                 })}
               </div>
-              {data.passenger && !data.passenger.baggage_dropped_at && (
+              {data.journey?.steps.some((s) => s.step_key === "baggage_check" && s.status !== "completed" && s.status !== "skipped") && (
                 <button
                   type="button"
                   onClick={() => advance.mutate("no_baggage")}
