@@ -1,0 +1,55 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1790267612551,
+      "tag": "0000_users_posts_help_bookings",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1790334776491,
+      "tag": "0001_base_app_tables",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1790334810633,
+      "tag": "0002_journey_feature",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1790334841552,
+      "tag": "0003_journey_arrival_baggage_flags",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1790342363093,
+      "tag": "0004_base_app_tables",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1790342403435,
+      "tag": "0005_journey_feature",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1790342771722,
+      "tag": "0006_passenger_flight_status_fields",
+      "breakpoints": true
+    }
+  ]
+}

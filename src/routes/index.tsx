@@ -1,24 +1,41 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { AppShell } from "@/components/AppShell";
+import { JourneyBoard } from "@/components/JourneyBoard";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "Airport Journey Tracker | AeroWay Companion" },
+      {
+        name: "description",
+        content: "Live step-by-step airport guidance with gate, security and boarding updates.",
+      },
+      { property: "og:title", content: "Airport Journey Tracker | AeroWay Companion" },
+      {
+        property: "og:description",
+        content: "Live step-by-step airport guidance with gate, security and boarding updates.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
+  component: Journey,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+function Journey() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <AppShell title="Journey">
+      <div className="flex w-full flex-col pb-space-xl">
+        <div className="mb-space-lg">
+          <span className="font-label-md text-label-md uppercase tracking-wider text-surface-tint">
+            Live Terminal Companion
+          </span>
+          <h1 className="mt-0.5 font-display-lg-mobile text-display-lg-mobile tracking-tight text-on-surface">
+            Your Airport Journey
+          </h1>
+        </div>
+        <JourneyBoard />
+      </div>
+    </AppShell>
   );
 }
