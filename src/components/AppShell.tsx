@@ -51,6 +51,14 @@ export function AppShell({ title, children }: { title: string; children: ReactNo
     setLangState(current);
     document.documentElement.dir = current === "AR" ? "rtl" : "ltr";
     if (current === "EN" || document.getElementById("gt-script")) return;
+    // Keep icon names (e.g. "luggage") from being translated into words.
+    const protect = () =>
+      document.querySelectorAll(".material-symbols-outlined:not(.notranslate)").forEach((el) => {
+        el.classList.add("notranslate");
+        el.setAttribute("translate", "no");
+      });
+    protect();
+    new MutationObserver(protect).observe(document.body, { childList: true, subtree: true });
     (window as any).googleTranslateElementInit = () => {
       new (window as any).google.translate.TranslateElement(
         { pageLanguage: "en", autoDisplay: false },
