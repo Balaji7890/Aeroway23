@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { AppShell } from "@/components/AppShell";
 import { HelpRequestForm } from "@/components/HelpRequestForm";
+import { FlightLookup } from "@/components/FlightLookup";
 
 export const Route = createFileRoute("/helpline")({
   head: () => ({
