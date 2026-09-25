@@ -14,7 +14,298 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      bookings: {
+        Row: {
+          airline: string
+          created_at: string
+          id: string
+          price: string | null
+          route: string
+          user_id: string
+        }
+        Insert: {
+          airline: string
+          created_at?: string
+          id?: string
+          price?: string | null
+          route: string
+          user_id: string
+        }
+        Update: {
+          airline?: string
+          created_at?: string
+          id?: string
+          price?: string | null
+          route?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      help_requests: {
+        Row: {
+          category: string
+          contact: string
+          created_at: string
+          id: string
+          message: string
+          name: string
+          status: string
+          user_id: string | null
+        }
+        Insert: {
+          category?: string
+          contact: string
+          created_at?: string
+          id?: string
+          message: string
+          name: string
+          status?: string
+          user_id?: string | null
+        }
+        Update: {
+          category?: string
+          contact?: string
+          created_at?: string
+          id?: string
+          message?: string
+          name?: string
+          status?: string
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      journey_events: {
+        Row: {
+          created_at: string
+          event_type: string
+          id: string
+          message: string
+          new_value: string | null
+          old_value: string | null
+          passenger_id: string
+          requires_action: boolean
+          severity: string
+          title: string
+        }
+        Insert: {
+          created_at?: string
+          event_type: string
+          id?: string
+          message?: string
+          new_value?: string | null
+          old_value?: string | null
+          passenger_id: string
+          requires_action?: boolean
+          severity?: string
+          title: string
+        }
+        Update: {
+          created_at?: string
+          event_type?: string
+          id?: string
+          message?: string
+          new_value?: string | null
+          old_value?: string | null
+          passenger_id?: string
+          requires_action?: boolean
+          severity?: string
+          title?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "journey_events_passenger_id_fkey"
+            columns: ["passenger_id"]
+            isOneToOne: false
+            referencedRelation: "passengers"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      journey_steps: {
+        Row: {
+          completed_at: string | null
+          created_at: string
+          description: string
+          estimated_time_minutes: number | null
+          id: string
+          passenger_id: string
+          status: string
+          step_key: string
+          step_order: number
+          title: string
+        }
+        Insert: {
+          completed_at?: string | null
+          created_at?: string
+          description?: string
+          estimated_time_minutes?: number | null
+          id?: string
+          passenger_id: string
+          status?: string
+          step_key: string
+          step_order: number
+          title: string
+        }
+        Update: {
+          completed_at?: string | null
+          created_at?: string
+          description?: string
+          estimated_time_minutes?: number | null
+          id?: string
+          passenger_id?: string
+          status?: string
+          step_key?: string
+          step_order?: number
+          title?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "journey_steps_passenger_id_fkey"
+            columns: ["passenger_id"]
+            isOneToOne: false
+            referencedRelation: "passengers"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      passengers: {
+        Row: {
+          airline: string
+          arrived_at: string | null
+          baggage_dropped_at: string | null
+          baggage_skipped: boolean
+          boarding_started_at: string | null
+          booking_id: string | null
+          cabin: string | null
+          checked_in_at: string | null
+          created_at: string
+          delay_minutes: number
+          departed_at: string | null
+          departure_time: string
+          destination: string
+          flight_number: string
+          flight_status: string
+          gate: string | null
+          id: string
+          is_demo: boolean
+          journey_status: string
+          origin: string
+          passenger_name: string
+          seat: string | null
+          security_cleared_at: string | null
+          terminal: string | null
+          updated_at: string
+          user_id: string | null
+        }
+        Insert: {
+          airline: string
+          arrived_at?: string | null
+          baggage_dropped_at?: string | null
+          baggage_skipped?: boolean
+          boarding_started_at?: string | null
+          booking_id?: string | null
+          cabin?: string | null
+          checked_in_at?: string | null
+          created_at?: string
+          delay_minutes?: number
+          departed_at?: string | null
+          departure_time: string
+          destination: string
+          flight_number: string
+          flight_status?: string
+          gate?: string | null
+          id?: string
+          is_demo?: boolean
+          journey_status?: string
+          origin: string
+          passenger_name: string
+          seat?: string | null
+          security_cleared_at?: string | null
+          terminal?: string | null
+          updated_at?: string
+          user_id?: string | null
+        }
+        Update: {
+          airline?: string
+          arrived_at?: string | null
+          baggage_dropped_at?: string | null
+          baggage_skipped?: boolean
+          boarding_started_at?: string | null
+          booking_id?: string | null
+          cabin?: string | null
+          checked_in_at?: string | null
+          created_at?: string
+          delay_minutes?: number
+          departed_at?: string | null
+          departure_time?: string
+          destination?: string
+          flight_number?: string
+          flight_status?: string
+          gate?: string | null
+          id?: string
+          is_demo?: boolean
+          journey_status?: string
+          origin?: string
+          passenger_name?: string
+          seat?: string | null
+          security_cleared_at?: string | null
+          terminal?: string | null
+          updated_at?: string
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      posts: {
+        Row: {
+          content: string
+          created_at: string
+          feedback: number | null
+          id: string
+          role: string
+          user_id: string
+        }
+        Insert: {
+          content: string
+          created_at?: string
+          feedback?: number | null
+          id?: string
+          role: string
+          user_id: string
+        }
+        Update: {
+          content?: string
+          created_at?: string
+          feedback?: number | null
+          id?: string
+          role?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          display_name: string | null
+          email: string | null
+          id: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          display_name?: string | null
+          email?: string | null
+          id: string
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          display_name?: string | null
+          email?: string | null
+          id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
