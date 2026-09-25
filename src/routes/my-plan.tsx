@@ -53,7 +53,7 @@ function MyPlan() {
             {data.latestEvent && (
               <div className="relative flex flex-col gap-space-md overflow-hidden rounded-xl bg-navy-depth p-space-lg text-pure-white shadow-xl">
                 <div className="flex items-center gap-space-sm">
-                  <span className="material-symbols-outlined flex h-8 w-8 items-center justify-center rounded-full bg-alert-amber/20 text-[18px] text-alert-amber">
+                  <span translate="no" className="notranslate material-symbols-outlined flex h-8 w-8 items-center justify-center rounded-full bg-alert-amber/20 text-[18px] text-alert-amber">
                     {data.latestEvent.requires_action ? "warning" : "info"}
                   </span>
                   <span className="font-label-md uppercase tracking-wider text-alert-amber">
@@ -108,7 +108,7 @@ function MyPlan() {
                         }`}
                       >
                         {(done || isCurrent) && (
-                          <span className="material-symbols-outlined text-[14px]">
+                          <span translate="no" className="notranslate material-symbols-outlined text-[14px]">
                             {done ? "check" : "schedule"}
                           </span>
                         )}
@@ -136,7 +136,7 @@ function MyPlan() {
             <div className={`${card} flex flex-col gap-space-md`}>
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <span className="material-symbols-outlined text-[20px] text-primary">airplane_ticket</span>
+                  <span translate="no" className="notranslate material-symbols-outlined text-[20px] text-primary">airplane_ticket</span>
                   <span className="font-headline-sm text-headline-sm text-on-surface">Boarding pass</span>
                 </div>
                 <span className="rounded-full bg-primary px-2.5 py-0.5 font-label-sm text-white">

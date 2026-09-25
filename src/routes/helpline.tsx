@@ -25,7 +25,7 @@ function Helpline() {
 <div className="flex flex-col gap-space-md">
 <div className="relative">
 <span className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-outline">
-<span className="material-symbols-outlined text-[20px]">search</span>
+<span translate="no" className="notranslate material-symbols-outlined text-[20px]">search</span>
 </span>
 <input className="w-full bg-pure-white text-on-surface placeholder:text-outline text-body-md py-3 pl-11 pr-4 rounded-xl shadow-[0_4px_12px_-2px_rgba(18,35,63,0.05)] focus:outline-none focus:ring-2 focus:ring-primary transition-all" placeholder="Search airlines, airports, medical, security..." type="text" />
 </div>
@@ -42,7 +42,7 @@ function Helpline() {
 <div className="bg-pure-white p-space-md rounded-2xl shadow-[0_4px_12px_-2px_rgba(18,35,63,0.05)] flex flex-col gap-space-sm">
 <div className="flex items-center gap-space-sm">
 <div className="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary shrink-0">
-<span className="material-symbols-outlined text-[20px]">flight_takeoff</span>
+<span translate="no" className="notranslate material-symbols-outlined text-[20px]">flight_takeoff</span>
 </div>
 <div className="flex flex-col min-w-0">
 <h3 className="font-headline-sm text-headline-sm text-on-surface truncate">Check a live flight</h3>
@@ -57,7 +57,7 @@ function Helpline() {
 <div className="flex items-center justify-between">
 <div className="flex items-center gap-space-sm">
 <div className="w-10 h-10 rounded-full bg-error flex items-center justify-center text-on-error shadow-[0_4px_12px_rgba(186,26,26,0.3)] animate-pulse">
-<span className="material-symbols-outlined text-[20px]">emergency</span>
+<span translate="no" className="notranslate material-symbols-outlined text-[20px]">emergency</span>
 </div>
 <div>
 <h2 className="font-headline-sm text-headline-sm text-on-surface">Airport Emergency Hotline</h2>
@@ -68,11 +68,11 @@ function Helpline() {
 </div>
 <div className="grid grid-cols-2 gap-space-sm">
 <a className="flex items-center justify-center gap-2 py-3 px-4 bg-error text-on-error rounded-xl font-label-lg shadow-[0_4px_12px_rgba(186,26,26,0.25)] active:scale-95 transition-all" href="tel:911">
-<span className="material-symbols-outlined text-[18px]">call</span>
+<span translate="no" className="notranslate material-symbols-outlined text-[18px]">call</span>
 <span>Call Security</span>
 </a>
 <a className="flex items-center justify-center gap-2 py-3 px-4 bg-pure-white text-error rounded-xl font-label-lg shadow-[0_4px_12px_rgba(18,35,63,0.06)] active:scale-95 transition-all" href="tel:112">
-<span className="material-symbols-outlined text-[18px]">medical_services</span>
+<span translate="no" className="notranslate material-symbols-outlined text-[18px]">medical_services</span>
 <span>Medical Desk</span>
 </a>
 </div>
@@ -81,7 +81,7 @@ function Helpline() {
 <div className="flex flex-col gap-space-sm">
 <div className="flex items-center justify-between px-1">
 <h3 className="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
-<span className="material-symbols-outlined text-primary text-[20px]">flight</span>
+<span translate="no" className="notranslate material-symbols-outlined text-primary text-[20px]">flight</span>
         Airport Helplines
       </h3>
 <span className="font-label-md text-secondary">Global Hubs</span>
@@ -101,10 +101,10 @@ function Helpline() {
 </div>
 <div className="flex items-center gap-space-xs shrink-0">
 <button className="w-10 h-10 rounded-full bg-surface-container-low text-primary flex items-center justify-center hover:bg-surface-container transition-all active:scale-95" title="Chat Assistance">
-<span className="material-symbols-outlined text-[18px]">chat</span>
+<span translate="no" className="notranslate material-symbols-outlined text-[18px]">chat</span>
 </button>
 <a className="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-[0_4px_12px_rgba(0,54,148,0.2)] hover:opacity-90 transition-all active:scale-95" href="tel:+914422560551" title="Call Airport">
-<span className="material-symbols-outlined text-[18px]">call</span>
+<span translate="no" className="notranslate material-symbols-outlined text-[18px]">call</span>
 </a>
 </div>
 </div>
@@ -122,10 +122,10 @@ function Helpline() {
 </div>
 <div className="flex items-center gap-space-xs shrink-0">
 <button className="w-10 h-10 rounded-full bg-surface-container-low text-primary flex items-center justify-center hover:bg-surface-container transition-all active:scale-95" title="Chat Assistance">
-<span className="material-symbols-outlined text-[18px]">chat</span>
+<span translate="no" className="notranslate material-symbols-outlined text-[18px]">chat</span>
 </button>
 <a className="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-[0_4px_12px_rgba(0,54,148,0.2)] hover:opacity-90 transition-all active:scale-95" href="tel:+97142245555" title="Call Airport">
-<span className="material-symbols-outlined text-[18px]">call</span>
+<span translate="no" className="notranslate material-symbols-outlined text-[18px]">call</span>
 </a>
 </div>
 </div>
@@ -143,10 +143,10 @@ function Helpline() {
 </div>
 <div className="flex items-center gap-space-xs shrink-0">
 <button className="w-10 h-10 rounded-full bg-surface-container-low text-primary flex items-center justify-center hover:bg-surface-container transition-all active:scale-95" title="Chat Assistance">
-<span className="material-symbols-outlined text-[18px]">chat</span>
+<span translate="no" className="notranslate material-symbols-outlined text-[18px]">chat</span>
 </button>
 <a className="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-[0_4px_12px_rgba(0,54,148,0.2)] hover:opacity-90 transition-all active:scale-95" href="tel:+448443351801" title="Call Airport">
-<span className="material-symbols-outlined text-[18px]">call</span>
+<span translate="no" className="notranslate material-symbols-outlined text-[18px]">call</span>
 </a>
 </div>
 </div>
@@ -164,10 +164,10 @@ function Helpline() {
 </div>
 <div className="flex items-center gap-space-xs shrink-0">
 <button className="w-10 h-10 rounded-full bg-surface-container-low text-primary flex items-center justify-center hover:bg-surface-container transition-all active:scale-95" title="Chat Assistance">
-<span className="material-symbols-outlined text-[18px]">chat</span>
+<span translate="no" className="notranslate material-symbols-outlined text-[18px]">chat</span>
 </button>
 <a className="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-[0_4px_12px_rgba(0,54,148,0.2)] hover:opacity-90 transition-all active:scale-95" href="tel:+6565956868" title="Call Airport">
-<span className="material-symbols-outlined text-[18px]">call</span>
+<span translate="no" className="notranslate material-symbols-outlined text-[18px]">call</span>
 </a>
 </div>
 </div>
@@ -177,7 +177,7 @@ function Helpline() {
 <div className="flex flex-col gap-space-sm">
 <div className="flex items-center justify-between px-1">
 <h3 className="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
-<span className="material-symbols-outlined text-primary text-[20px]">support_agent</span>
+<span translate="no" className="notranslate material-symbols-outlined text-primary text-[20px]">support_agent</span>
         Airline Customer Care
       </h3>
 <span className="font-label-md text-secondary">Partners</span>
@@ -195,7 +195,7 @@ function Helpline() {
 </div>
 </div>
 <a className="w-10 h-10 rounded-full bg-surface-container-low text-primary flex items-center justify-center hover:bg-surface-container transition-all active:scale-95 shrink-0" href="tel:+971600555555" title="Call Airline">
-<span className="material-symbols-outlined text-[18px]">call</span>
+<span translate="no" className="notranslate material-symbols-outlined text-[18px]">call</span>
 </a>
 </div>
 {/* IndiGo */}
@@ -210,7 +210,7 @@ function Helpline() {
 </div>
 </div>
 <a className="w-10 h-10 rounded-full bg-surface-container-low text-primary flex items-center justify-center hover:bg-surface-container transition-all active:scale-95 shrink-0" href="tel:+919910383838" title="Call Airline">
-<span className="material-symbols-outlined text-[18px]">call</span>
+<span translate="no" className="notranslate material-symbols-outlined text-[18px]">call</span>
 </a>
 </div>
 {/* Air India */}
@@ -225,7 +225,7 @@ function Helpline() {
 </div>
 </div>
 <a className="w-10 h-10 rounded-full bg-surface-container-low text-primary flex items-center justify-center hover:bg-surface-container transition-all active:scale-95 shrink-0" href="tel:+9118001801407" title="Call Airline">
-<span className="material-symbols-outlined text-[18px]">call</span>
+<span translate="no" className="notranslate material-symbols-outlined text-[18px]">call</span>
 </a>
 </div>
 {/* Qatar Airways */}
@@ -240,7 +240,7 @@ function Helpline() {
 </div>
 </div>
 <a className="w-10 h-10 rounded-full bg-surface-container-low text-primary flex items-center justify-center hover:bg-surface-container transition-all active:scale-95 shrink-0" href="tel:+97440230000" title="Call Airline">
-<span className="material-symbols-outlined text-[18px]">call</span>
+<span translate="no" className="notranslate material-symbols-outlined text-[18px]">call</span>
 </a>
 </div>
 </div>
@@ -249,14 +249,14 @@ function Helpline() {
 <div className="bg-surface-container-high p-space-lg rounded-2xl flex flex-col items-center text-center gap-space-md relative overflow-hidden">
 <div className="absolute -left-8 -top-8 w-24 h-24 bg-primary/10 rounded-full blur-xl pointer-events-none"></div>
 <div className="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-[0_4px_12px_rgba(0,54,148,0.2)]">
-<span className="material-symbols-outlined text-[24px]">smart_toy</span>
+<span translate="no" className="notranslate material-symbols-outlined text-[24px]">smart_toy</span>
 </div>
 <div className="flex flex-col gap-1 max-w-xs">
 <h4 className="font-headline-sm text-headline-sm text-on-surface">Can't find who you're looking for?</h4>
 <p className="font-body-sm text-on-surface-variant">Ask AeroWay AI to instantly dial or connect you with the right terminal desk.</p>
 </div>
 <Link to="/chat" className="px-5 py-2.5 bg-primary text-on-primary rounded-full font-label-lg shadow-[0_4px_12px_rgba(0,54,148,0.2)] hover:opacity-90 transition-all active:scale-95 flex items-center gap-2">
-<span className="material-symbols-outlined text-[18px]">chat</span>
+<span translate="no" className="notranslate material-symbols-outlined text-[18px]">chat</span>
 <span>Ask AI Assistant</span>
 </Link>
 </div>

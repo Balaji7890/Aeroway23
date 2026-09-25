@@ -21,7 +21,7 @@ export function DisruptionSimulator({
   return (
     <div className="rounded-2xl bg-pure-white p-space-lg shadow-[0_4px_12px_-2px_rgba(18,35,63,0.05)]">
       <div className="mb-space-sm flex items-center gap-2">
-        <span className="material-symbols-outlined text-[20px] text-primary">science</span>
+        <span translate="no" className="notranslate material-symbols-outlined text-[20px] text-primary">science</span>
         <h3 className="font-headline-md text-headline-md text-on-surface">Live event simulator</h3>
       </div>
       <p className="mb-space-md font-body-sm text-body-sm text-on-surface-variant">
@@ -35,7 +35,7 @@ export function DisruptionSimulator({
             onClick={() => disrupt.mutate(s.input)}
             className="flex flex-col gap-1 rounded-xl bg-surface-container-low p-3 text-left transition-all active:scale-95 disabled:opacity-50"
           >
-            <span className="material-symbols-outlined text-[20px] text-primary">{s.icon}</span>
+            <span translate="no" className="notranslate material-symbols-outlined text-[20px] text-primary">{s.icon}</span>
             <span className="font-label-md text-label-md text-on-surface">{s.label}</span>
             <span className="font-body-sm text-body-sm text-secondary">{s.hint}</span>
           </button>

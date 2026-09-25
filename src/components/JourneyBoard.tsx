@@ -182,7 +182,7 @@ export function JourneyBoard() {
                         : "bg-surface-container-highest text-secondary"
                   }`}
                 >
-                  <span className="material-symbols-outlined text-[14px]">
+                  <span translate="no" className="notranslate material-symbols-outlined text-[14px]">
                     {done ? "check" : STEP_ICONS[s.step_key as StepKey]}
                   </span>
                 </span>
@@ -233,7 +233,7 @@ export function JourneyBoard() {
                   complete ? "bg-surface-container-low text-secondary" : "bg-primary text-on-primary"
                 }`}
               >
-                <span className="material-symbols-outlined text-[16px]">{complete ? "check" : m.icon}</span>
+                <span translate="no" className="notranslate material-symbols-outlined text-[16px]">{complete ? "check" : m.icon}</span>
                 {m.label}
               </button>
             );
