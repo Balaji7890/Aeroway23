@@ -35,7 +35,26 @@ export type LiveFlight = {
   };
 };
 
-type RawFlight = Record<string, any>;
+type RawEndpoint = {
+  airport?: string | null;
+  iata?: string | null;
+  terminal?: string | null;
+  gate?: string | null;
+  baggage?: string | null;
+  delay?: number | null;
+  scheduled?: string | null;
+  estimated?: string | null;
+  actual?: string | null;
+};
+
+type RawFlight = {
+  flight_date?: string | null;
+  flight_status?: string | null;
+  departure?: RawEndpoint;
+  arrival?: RawEndpoint;
+  airline?: { name?: string | null };
+  flight?: { iata?: string | null; icao?: string | null; number?: string | null };
+};
 
 function normalise(raw: RawFlight): LiveFlight {
   return {
