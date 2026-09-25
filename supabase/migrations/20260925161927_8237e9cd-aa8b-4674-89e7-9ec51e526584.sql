@@ -1,0 +1,1 @@
+alter table public.journey_events add column if not exists action text;
