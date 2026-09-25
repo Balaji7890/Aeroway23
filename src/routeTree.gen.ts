@@ -10,33 +10,102 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BookingsRouteImport } from './routes/bookings'
+import { Route as ChatRouteImport } from './routes/chat'
+import { Route as HelplineRouteImport } from './routes/helpline'
+import { Route as MyPlanRouteImport } from './routes/my-plan'
+import { Route as ApiPublicFlightEventsRouteImport } from './routes/api/public/flight-events'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BookingsRoute = BookingsRouteImport.update({
+  id: '/bookings',
+  path: '/bookings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChatRoute = ChatRouteImport.update({
+  id: '/chat',
+  path: '/chat',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HelplineRoute = HelplineRouteImport.update({
+  id: '/helpline',
+  path: '/helpline',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MyPlanRoute = MyPlanRouteImport.update({
+  id: '/my-plan',
+  path: '/my-plan',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicFlightEventsRoute = ApiPublicFlightEventsRouteImport.update({
+  id: '/api/public/flight-events',
+  path: '/api/public/flight-events',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/bookings': typeof BookingsRoute
+  '/chat': typeof ChatRoute
+  '/helpline': typeof HelplineRoute
+  '/my-plan': typeof MyPlanRoute
+  '/api/public/flight-events': typeof ApiPublicFlightEventsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/bookings': typeof BookingsRoute
+  '/chat': typeof ChatRoute
+  '/helpline': typeof HelplineRoute
+  '/my-plan': typeof MyPlanRoute
+  '/api/public/flight-events': typeof ApiPublicFlightEventsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/bookings': typeof BookingsRoute
+  '/chat': typeof ChatRoute
+  '/helpline': typeof HelplineRoute
+  '/my-plan': typeof MyPlanRoute
+  '/api/public/flight-events': typeof ApiPublicFlightEventsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/bookings'
+    | '/chat'
+    | '/helpline'
+    | '/my-plan'
+    | '/api/public/flight-events'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/bookings'
+    | '/chat'
+    | '/helpline'
+    | '/my-plan'
+    | '/api/public/flight-events'
+  id:
+    | '__root__'
+    | '/'
+    | '/bookings'
+    | '/chat'
+    | '/helpline'
+    | '/my-plan'
+    | '/api/public/flight-events'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BookingsRoute: typeof BookingsRoute
+  ChatRoute: typeof ChatRoute
+  HelplineRoute: typeof HelplineRoute
+  MyPlanRoute: typeof MyPlanRoute
+  ApiPublicFlightEventsRoute: typeof ApiPublicFlightEventsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +117,51 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/bookings': {
+      id: '/bookings'
+      path: '/bookings'
+      fullPath: '/bookings'
+      preLoaderRoute: typeof BookingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/chat': {
+      id: '/chat'
+      path: '/chat'
+      fullPath: '/chat'
+      preLoaderRoute: typeof ChatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/helpline': {
+      id: '/helpline'
+      path: '/helpline'
+      fullPath: '/helpline'
+      preLoaderRoute: typeof HelplineRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/my-plan': {
+      id: '/my-plan'
+      path: '/my-plan'
+      fullPath: '/my-plan'
+      preLoaderRoute: typeof MyPlanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/flight-events': {
+      id: '/api/public/flight-events'
+      path: '/api/public/flight-events'
+      fullPath: '/api/public/flight-events'
+      preLoaderRoute: typeof ApiPublicFlightEventsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BookingsRoute: BookingsRoute,
+  ChatRoute: ChatRoute,
+  HelplineRoute: HelplineRoute,
+  MyPlanRoute: MyPlanRoute,
+  ApiPublicFlightEventsRoute: ApiPublicFlightEventsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

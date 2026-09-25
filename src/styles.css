@@ -132,13 +132,166 @@
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
+/* ── AeroWay Travel System design tokens ───────────────────────────── */
+@theme {
+  --font-display-lg: "Atkinson Hyperlegible Next", ui-sans-serif, system-ui, sans-serif;
+  --font-display-lg-mobile: var(--font-display-lg);
+  --font-headline-lg: var(--font-display-lg);
+  --font-headline-md: var(--font-display-lg);
+  --font-headline-sm: var(--font-display-lg);
+  --font-body-lg: var(--font-display-lg);
+  --font-body-md: var(--font-display-lg);
+  --font-body-sm: var(--font-display-lg);
+  --font-label-lg: var(--font-display-lg);
+  --font-label-md: var(--font-display-lg);
+  --font-label-sm: var(--font-display-lg);
+  --font-sans: var(--font-display-lg);
+
+  --text-display-lg: 36px;
+  --text-display-lg--line-height: 44px;
+  --text-display-lg--letter-spacing: -0.02em;
+  --text-display-lg--font-weight: 700;
+  --text-display-lg-mobile: 28px;
+  --text-display-lg-mobile--line-height: 36px;
+  --text-display-lg-mobile--letter-spacing: -0.01em;
+  --text-display-lg-mobile--font-weight: 700;
+  --text-headline-lg: 24px;
+  --text-headline-lg--line-height: 32px;
+  --text-headline-lg--letter-spacing: -0.01em;
+  --text-headline-lg--font-weight: 700;
+  --text-headline-md: 20px;
+  --text-headline-md--line-height: 28px;
+  --text-headline-md--font-weight: 600;
+  --text-headline-sm: 18px;
+  --text-headline-sm--line-height: 24px;
+  --text-headline-sm--font-weight: 600;
+  --text-body-lg: 16px;
+  --text-body-lg--line-height: 24px;
+  --text-body-md: 14px;
+  --text-body-md--line-height: 20px;
+  --text-body-sm: 12px;
+  --text-body-sm--line-height: 16px;
+  --text-label-lg: 14px;
+  --text-label-lg--line-height: 20px;
+  --text-label-lg--letter-spacing: 0.01em;
+  --text-label-lg--font-weight: 600;
+  --text-label-md: 12px;
+  --text-label-md--line-height: 16px;
+  --text-label-md--letter-spacing: 0.02em;
+  --text-label-md--font-weight: 600;
+  --text-label-sm: 10px;
+  --text-label-sm--line-height: 14px;
+  --text-label-sm--letter-spacing: 0.05em;
+  --text-label-sm--font-weight: 700;
+
+  --spacing-gutter: 1rem;
+  --spacing-margin: 1.25rem;
+  --spacing-space-xs: 0.25rem;
+  --spacing-space-sm: 0.5rem;
+  --spacing-space-md: 1rem;
+  --spacing-space-lg: 1.5rem;
+  --spacing-space-xl: 2rem;
+
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+
+  --color-surface: #f8f9ff;
+  --color-surface-dim: #cbdbf5;
+  --color-surface-bright: #f8f9ff;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #eff4ff;
+  --color-surface-container: #e5eeff;
+  --color-surface-container-high: #dce9ff;
+  --color-surface-container-highest: #d3e4fe;
+  --color-surface-variant: #d3e4fe;
+  --color-surface-tint: #2957c3;
+  --color-on-surface: #0b1c30;
+  --color-on-surface-variant: #434653;
+  --color-inverse-surface: #213145;
+  --color-inverse-on-surface: #eaf1ff;
+  --color-outline: #747684;
+  --color-outline-variant: #c4c6d5;
+  --color-primary: #003694;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #1b4db9;
+  --color-on-primary-container: #b9c8ff;
+  --color-inverse-primary: #b4c5ff;
+  --color-primary-fixed: #dbe1ff;
+  --color-primary-fixed-dim: #b4c5ff;
+  --color-on-primary-fixed: #00174b;
+  --color-on-primary-fixed-variant: #003ea7;
+  --color-secondary: #4f5f7e;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #cadaff;
+  --color-on-secondary-container: #4f5f7e;
+  --color-secondary-fixed: #d7e2ff;
+  --color-secondary-fixed-dim: #b6c7eb;
+  --color-on-secondary-fixed: #091b37;
+  --color-on-secondary-fixed-variant: #374765;
+  --color-tertiary: #004829;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #006239;
+  --color-on-tertiary-container: #75dfa0;
+  --color-tertiary-fixed: #8ef8b7;
+  --color-tertiary-fixed-dim: #71db9d;
+  --color-on-tertiary-fixed: #002110;
+  --color-on-tertiary-fixed-variant: #00522f;
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+  --color-background: #f8f9ff;
+  --color-on-background: #0b1c30;
+  --color-canvas-ice: #eef3fb;
+  --color-alert-amber: #f5b700;
+  --color-status-emerald: #0e8a54;
+  --color-pure-white: #ffffff;
+  --color-navy-depth: #0c172a;
+  --color-border-subtle: #dce5f5;
+}
+
 @layer base {
   * {
-    border-color: var(--color-border);
+    border-color: var(--color-border-subtle);
   }
 
+  html,
   body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-canvas-ice);
+    color: var(--color-on-surface);
+    font-family: var(--font-body-md);
+    overscroll-behavior: none;
   }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+@utility pt-safe {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
 }
