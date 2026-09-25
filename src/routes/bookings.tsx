@@ -39,25 +39,13 @@ function Bookings() {
 </div>
 <div className="flex flex-col min-w-0">
 <span className="font-headline-sm text-headline-sm text-on-surface truncate">AeroWay Smart Assistant</span>
-<span className="font-body-sm text-body-sm text-secondary truncate">Instant booking, price drops &amp; partner deals</span>
+<span className="font-body-sm text-body-sm text-secondary truncate">Live schedules, gates &amp; delays</span>
 </div>
 </div>
-{/* Search Input Form */}
-<div className="relative flex items-center">
-<span className="absolute left-3.5 material-symbols-outlined text-primary text-[20px]">search</span>
-<input className="w-full bg-surface-container-low pl-11 pr-28 py-3.5 rounded-xl font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/60 focus:outline-none focus:ring-2 focus:ring-primary transition-all" id="flight-chat-input" placeholder="Type 'IndiGo flight to Dubai' or 'NYC to London'..." type="text" />
-<button className="absolute right-1.5 bg-primary text-on-primary px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-primary-container active:scale-95 transition-all flex items-center gap-1">
-<span>Ask</span>
-<span className="material-symbols-outlined text-[16px]">arrow_forward</span>
-</button>
-</div>
-{/* Quick Prompt Chips */}
-<div className="flex items-center gap-2 mt-space-md overflow-x-auto pb-1">
-<span className="font-label-sm text-label-sm text-on-surface-variant shrink-0">Try asking:</span>
-<button className="bg-surface-container hover:bg-primary-fixed text-primary px-3 py-1 rounded-full font-label-md text-label-md shrink-0 transition-all active:scale-95">IndiGo to DXB</button>
-<button className="bg-surface-container hover:bg-primary-fixed text-primary px-3 py-1 rounded-full font-label-md text-label-md shrink-0 transition-all active:scale-95">NYC ✈️ LHR</button>
-<button className="bg-surface-container hover:bg-primary-fixed text-primary px-3 py-1 rounded-full font-label-md text-label-md shrink-0 transition-all active:scale-95">🔥 Cheaper Tomorrow</button>
-</div>
+<FlightLookup
+  placeholder="Type 'EK501' or 'MAA to DXB'..."
+  chips={["EK501", "MAA to DXB", "6E55", "BOM to LHR"]}
+/>
 </div>
 {/* Dynamic Chat Response Box (Initially hidden or showing friendly greeting) */}
 <div className="hidden bg-primary-fixed/40 rounded-xl p-space-md mb-space-lg flex items-start gap-3" id="chat-response-card">
