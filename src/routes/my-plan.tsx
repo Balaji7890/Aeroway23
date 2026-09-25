@@ -19,6 +19,17 @@ export const Route = createFileRoute("/my-plan")({
 
 const card = "rounded-2xl bg-pure-white p-space-lg shadow-[0_4px_12px_-2px_rgba(18,35,63,0.05)]";
 
+/** Which saved milestone each task confirms when tapped. */
+const STEP_MILESTONE: Record<string, string> = {
+  check_in: "check_in",
+  travel_to_airport: "arrived",
+  airport_arrival: "arrived",
+  baggage_check: "baggage",
+  security: "security",
+  boarding: "boarding",
+  departed: "departed",
+};
+
 function MyPlan() {
   const { user, authLoading, signIn, query, data, demo, advance, disrupt } = useJourney();
 
@@ -91,10 +102,15 @@ function MyPlan() {
                 {data.journey?.steps.map((s) => {
                   const done = s.status === "completed" || s.status === "skipped";
                   const isCurrent = s.status === "current";
+                  const milestone = STEP_MILESTONE[s.step_key];
+                  const canMark = !done && !!milestone;
                   return (
-                    <div
+                    <button
+                      type="button"
                       key={s.id}
-                      className={`flex items-center gap-space-md rounded-xl p-3 ${
+                      disabled={!canMark || advance.isPending}
+                      onClick={() => milestone && advance.mutate(milestone)}
+                      className={`flex w-full items-center gap-space-md rounded-xl p-3 text-left transition-all enabled:hover:ring-2 enabled:hover:ring-primary/30 enabled:active:scale-[0.99] ${
                         isCurrent ? "bg-pure-white shadow-md ring-2 ring-primary/20" : "bg-surface-container-lowest shadow-sm"
                       } ${done ? "opacity-75" : ""}`}
                     >
@@ -123,10 +139,25 @@ function MyPlan() {
                         </span>
                         <span className="truncate font-body-sm text-secondary">{s.description}</span>
                       </div>
-                    </div>
+                      {canMark && (
+                        <span className="shrink-0 rounded-full bg-primary/10 px-2.5 py-1 font-label-sm text-primary">
+                          {advance.isPending && advance.variables === milestone ? "Saving…" : "Mark done"}
+                        </span>
+                      )}
+                    </button>
                   );
                 })}
               </div>
+              {data.journey?.steps.some((s) => s.step_key === "baggage_check" && s.status !== "completed" && s.status !== "skipped") && (
+                <button
+                  type="button"
+                  onClick={() => advance.mutate("no_baggage")}
+                  disabled={advance.isPending}
+                  className="mt-space-sm font-label-md text-primary underline disabled:opacity-50"
+                >
+                  I have no checked bags
+                </button>
+              )}
               {advance.error && (
                 <p className="mt-2 font-body-sm text-error">Couldn't save that update. Please try again.</p>
               )}

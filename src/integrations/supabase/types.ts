@@ -76,6 +76,7 @@ export type Database = {
       }
       journey_events: {
         Row: {
+          action: string | null
           created_at: string
           event_type: string
           id: string
@@ -88,6 +89,7 @@ export type Database = {
           title: string
         }
         Insert: {
+          action?: string | null
           created_at?: string
           event_type: string
           id?: string
@@ -100,6 +102,7 @@ export type Database = {
           title: string
         }
         Update: {
+          action?: string | null
           created_at?: string
           event_type?: string
           id?: string
