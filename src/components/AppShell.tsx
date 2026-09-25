@@ -1,5 +1,5 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { useState, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { useAuth } from "@/hooks/useAuth";
 
 const LANGUAGES = [
@@ -20,14 +20,58 @@ const TABS = [
   { to: "/bookings", icon: "flight_takeoff", label: "Book" },
 ] as const;
 
+const GT_CODES: Record<string, string> = {
+  EN: "en", ES: "es", FR: "fr", DE: "de", HI: "hi", AR: "ar", ZH: "zh-CN",
+};
+
+function readLang() {
+  const m = document.cookie.match(/googtrans=\/en\/([^;]+)/);
+  if (!m) return "EN";
+  return Object.keys(GT_CODES).find((k) => GT_CODES[k] === m[1]) ?? "EN";
+}
+
+function applyLang(code: string) {
+  const host = window.location.hostname;
+  const expire = "expires=Thu, 01 Jan 1970 00:00:00 GMT";
+  document.cookie = `googtrans=; ${expire}; path=/`;
+  document.cookie = `googtrans=; ${expire}; path=/; domain=${host}`;
+  document.cookie = `googtrans=; ${expire}; path=/; domain=.${host}`;
+  if (code !== "EN") document.cookie = `googtrans=/en/${GT_CODES[code]}; path=/`;
+  window.location.reload();
+}
+
 export function AppShell({ title, children }: { title: string; children: ReactNode }) {
   const [langOpen, setLangOpen] = useState(false);
-  const [lang, setLang] = useState("EN");
+  const [lang, setLangState] = useState("EN");
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const { user, signIn, signOut } = useAuth();
 
+  useEffect(() => {
+    const current = readLang();
+    setLangState(current);
+    document.documentElement.dir = current === "AR" ? "rtl" : "ltr";
+    if (current === "EN" || document.getElementById("gt-script")) return;
+    (window as any).googleTranslateElementInit = () => {
+      new (window as any).google.translate.TranslateElement(
+        { pageLanguage: "en", autoDisplay: false },
+        "gt-element",
+      );
+    };
+    const s = document.createElement("script");
+    s.id = "gt-script";
+    s.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+    document.body.appendChild(s);
+  }, []);
+
+  const setLang = (code: string) => {
+    if (code === lang) return;
+    setLangState(code);
+    applyLang(code);
+  };
+
   return (
     <div className="flex min-h-screen flex-col bg-surface selection:bg-secondary-container">
+      <div id="gt-element" className="hidden" />
       <header className="fixed top-0 z-50 w-full pt-safe bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
         <div className="mx-auto flex h-28 max-w-[1200px] flex-col justify-between px-margin py-space-sm">
           <div className="flex items-center justify-between">
