@@ -85,7 +85,7 @@ export function AppShell({ title, children }: { title: string; children: ReactNo
           <div className="flex items-center justify-between">
             <Link to="/" className="flex min-w-0 items-center gap-space-sm">
               <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-on-primary">
-                <span className="material-symbols-outlined text-[18px]">flight</span>
+                <span translate="no" className="notranslate material-symbols-outlined text-[18px]">flight</span>
               </span>
               <span className="flex min-w-0 flex-col">
                 <span className="flex items-center gap-space-xs">
@@ -107,9 +107,9 @@ export function AppShell({ title, children }: { title: string; children: ReactNo
                   onClick={() => setLangOpen((v) => !v)}
                   className="flex h-9 items-center gap-1 rounded-full bg-pure-white px-2.5 font-label-md text-label-md text-on-surface shadow-[0_2px_8px_rgba(18,35,63,0.06)] transition-all active:scale-95"
                 >
-                  <span className="material-symbols-outlined text-[16px] text-primary">language</span>
+                  <span translate="no" className="notranslate material-symbols-outlined text-[16px] text-primary">language</span>
                   <span>{lang}</span>
-                  <span className="material-symbols-outlined text-[14px] text-on-surface-variant">
+                  <span translate="no" className="notranslate material-symbols-outlined text-[14px] text-on-surface-variant">
                     expand_more
                   </span>
                 </button>
@@ -130,7 +130,7 @@ export function AppShell({ title, children }: { title: string; children: ReactNo
                       >
                         <span>{l.label}</span>
                         {l.code === lang && (
-                          <span className="material-symbols-outlined text-[16px]">check</span>
+                          <span translate="no" className="notranslate material-symbols-outlined text-[16px]">check</span>
                         )}
                       </button>
                     ))}
@@ -142,7 +142,7 @@ export function AppShell({ title, children }: { title: string; children: ReactNo
                 title={user ? `Signed in as ${user.email} — tap to sign out` : "Sign in with Google"}
                 className="flex h-8 items-center gap-1 rounded-full bg-primary px-2 text-on-primary font-label-sm text-label-sm"
               >
-                <span className="material-symbols-outlined text-[18px]">{user ? "logout" : "person"}</span>
+                <span translate="no" className="notranslate material-symbols-outlined text-[18px]">{user ? "logout" : "person"}</span>
                 <span className="hidden sm:inline">{user ? "Sign out" : "Sign in"}</span>
               </button>
             </div>
@@ -187,7 +187,7 @@ export function AppShell({ title, children }: { title: string; children: ReactNo
                     : "text-secondary hover:text-on-surface"
                 }`}
               >
-                <span className="material-symbols-outlined text-[18px]">{t.icon}</span>
+                <span translate="no" className="notranslate material-symbols-outlined text-[18px]">{t.icon}</span>
                 <span className="truncate text-[10px] font-semibold sm:text-label-md">
                   {t.label}
                 </span>

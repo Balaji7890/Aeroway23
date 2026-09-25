@@ -107,7 +107,7 @@ function Chat() {
         <div className="bg-surface-container-low rounded-xl p-space-md flex items-center justify-between shadow-[0_4px_12px_-2px_rgba(18,35,63,0.05)]">
           <div className="flex items-center gap-space-md">
             <div className="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center shrink-0 text-on-primary-container">
-              <span className="material-symbols-outlined text-[24px]">smart_toy</span>
+              <span translate="no" className="notranslate material-symbols-outlined text-[24px]">smart_toy</span>
             </div>
             <div>
               <h2 className="font-headline-md text-headline-md text-on-surface">Hello, Captain! ✈️</h2>
@@ -123,7 +123,7 @@ function Chat() {
           {CHIPS.map((c) => (
             <button key={c.label} onClick={() => send(c.q)} disabled={busy}
               className="bg-pure-white hover:bg-surface-container-low px-3.5 py-2 rounded-full font-label-md text-label-md text-primary shadow-[0_4px_12px_-2px_rgba(18,35,63,0.05)] shrink-0 flex items-center gap-1.5 active:scale-95">
-              <span className="material-symbols-outlined text-[16px] text-surface-tint">{c.icon}</span>
+              <span translate="no" className="notranslate material-symbols-outlined text-[16px] text-surface-tint">{c.icon}</span>
               <span>{c.label}</span>
             </button>
           ))}
@@ -134,7 +134,7 @@ function Chat() {
             m.role === "assistant" ? (
               <div key={m.id ?? i} className="flex items-start gap-space-sm max-w-[88%]">
                 <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0 text-on-primary">
-                  <span className="material-symbols-outlined text-[16px]">smart_toy</span>
+                  <span translate="no" className="notranslate material-symbols-outlined text-[16px]">smart_toy</span>
                 </div>
                 <div className="flex flex-col gap-1">
                   <div className="bg-pure-white p-space-md rounded-xl shadow-[0_4px_12px_-2px_rgba(18,35,63,0.05)] text-on-surface font-body-md whitespace-pre-wrap">
@@ -155,7 +155,7 @@ function Chat() {
             ) : (
               <div key={m.id ?? i} className="flex items-start gap-space-sm max-w-[88%] ml-auto flex-row-reverse">
                 <div className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center shrink-0 text-on-secondary">
-                  <span className="material-symbols-outlined text-[16px]">person</span>
+                  <span translate="no" className="notranslate material-symbols-outlined text-[16px]">person</span>
                 </div>
                 <div className="bg-primary text-on-primary p-space-md rounded-xl font-body-md whitespace-pre-wrap">{m.content}</div>
               </div>
@@ -173,7 +173,7 @@ function Chat() {
             placeholder="Ask about gate, baggage, food, lounge..." />
           <button type="submit" disabled={busy || !input.trim()} aria-label="Send message"
             className="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center disabled:opacity-50 active:scale-95">
-            <span className="material-symbols-outlined text-[20px]">send</span>
+            <span translate="no" className="notranslate material-symbols-outlined text-[20px]">send</span>
           </button>
         </form>
       </div>

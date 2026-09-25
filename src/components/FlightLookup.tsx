@@ -59,12 +59,12 @@ export function FlightCard({ f }: { f: LiveFlight }) {
 
       {delay > 0 ? (
         <span className="font-label-md text-alert-amber flex items-center gap-1">
-          <span className="material-symbols-outlined text-[16px]">schedule</span>
+          <span translate="no" className="notranslate material-symbols-outlined text-[16px]">schedule</span>
           Departing about {delay} min late — estimated {timeLabel(f.departure.estimated)}
         </span>
       ) : (
         <span className="font-label-md text-status-emerald flex items-center gap-1">
-          <span className="material-symbols-outlined text-[16px]">check_circle</span>
+          <span translate="no" className="notranslate material-symbols-outlined text-[16px]">check_circle</span>
           On time
         </span>
       )}
@@ -134,7 +134,7 @@ export function FlightLookup({
           className="absolute right-1.5 bg-primary text-on-primary px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-primary-container active:scale-95 transition-all flex items-center gap-1 disabled:opacity-60"
         >
           <span>{busy ? "Checking…" : "Check"}</span>
-          <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+          <span translate="no" className="notranslate material-symbols-outlined text-[16px]">arrow_forward</span>
         </button>
       </form>
 

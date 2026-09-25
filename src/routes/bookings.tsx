@@ -26,7 +26,7 @@ function Bookings() {
 <div className="flex items-center justify-between">
 <span className="font-label-sm text-label-sm text-primary bg-primary-fixed px-2.5 py-1 rounded-full uppercase tracking-wider">Flight Hub &amp; Concierge</span>
 <span className="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
-<span className="material-symbols-outlined text-[14px] text-status-emerald">bolt</span> Live airline sync
+<span translate="no" className="notranslate material-symbols-outlined text-[14px] text-status-emerald">bolt</span> Live airline sync
       </span>
 </div>
 <h1 className="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold tracking-tight">Where to next, Captain?</h1>
@@ -36,7 +36,7 @@ function Bookings() {
 <div className="bg-pure-white rounded-xl p-space-md shadow-[0_4px_20px_-2px_rgba(18,35,63,0.08)] mb-space-lg transition-all hover:shadow-[0_8px_30px_-4px_rgba(18,35,63,0.12)]">
 <div className="flex items-center gap-space-sm mb-space-md">
 <div className="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary shrink-0">
-<span className="material-symbols-outlined text-[20px]" style={{ "fontVariationSettings": "'FILL' 1" }}>smart_toy</span>
+<span translate="no" className="notranslate material-symbols-outlined text-[20px]" style={{ "fontVariationSettings": "'FILL' 1" }}>smart_toy</span>
 </div>
 <div className="flex flex-col min-w-0">
 <span className="font-headline-sm text-headline-sm text-on-surface truncate">AeroWay Smart Assistant</span>
@@ -51,7 +51,7 @@ function Bookings() {
 {/* Dynamic Chat Response Box (Initially hidden or showing friendly greeting) */}
 <div className="hidden bg-primary-fixed/40 rounded-xl p-space-md mb-space-lg flex items-start gap-3" id="chat-response-card">
 <div className="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0 mt-0.5">
-<span className="material-symbols-outlined text-[16px]">auto_awesome</span>
+<span translate="no" className="notranslate material-symbols-outlined text-[16px]">auto_awesome</span>
 </div>
 <div className="flex flex-col gap-1 min-w-0">
 <span className="font-label-md text-label-md font-bold text-primary">AeroWay Concierge Match</span>
@@ -61,7 +61,7 @@ function Bookings() {
 {/* Active Flight Deals & Featured Routes */}
 <div className="flex items-center justify-between mb-space-md">
 <h2 className="font-headline-md text-headline-md text-on-surface font-bold">Trending Sky Deals</h2>
-<a className="font-label-md text-label-md text-primary font-semibold flex items-center gap-0.5" href="#">View all <span className="material-symbols-outlined text-[16px]">chevron_right</span></a>
+<a className="font-label-md text-label-md text-primary font-semibold flex items-center gap-0.5" href="#">View all <span translate="no" className="notranslate material-symbols-outlined text-[16px]">chevron_right</span></a>
 </div>
 {/* Cards Grid */}
 <div className="grid grid-cols-1 sm:grid-cols-2 gap-space-md mb-space-xl">
@@ -83,8 +83,8 @@ function Bookings() {
 </div>
 <div className="p-space-md flex flex-col gap-3">
 <div className="flex items-center justify-between text-secondary font-body-sm">
-<span className="flex items-center gap-1"><span className="material-symbols-outlined text-[16px]">airline_seat_recline_normal</span> IndiGo • Economy</span>
-<span className="flex items-center gap-1 text-status-emerald font-semibold"><span className="material-symbols-outlined text-[16px]">verified</span> Official Partner</span>
+<span className="flex items-center gap-1"><span translate="no" className="notranslate material-symbols-outlined text-[16px]">airline_seat_recline_normal</span> IndiGo • Economy</span>
+<span className="flex items-center gap-1 text-status-emerald font-semibold"><span translate="no" className="notranslate material-symbols-outlined text-[16px]">verified</span> Official Partner</span>
 </div>
 <BookButton airline="IndiGo" route="Chennai → Dubai" price="₹17,499" label="Book Direct with IndiGo" />
 </div>
@@ -107,8 +107,8 @@ function Bookings() {
 </div>
 <div className="p-space-md flex flex-col gap-3">
 <div className="flex items-center justify-between text-secondary font-body-sm">
-<span className="flex items-center gap-1"><span className="material-symbols-outlined text-[16px]">airline_seat_recline_normal</span> British Airways</span>
-<span className="flex items-center gap-1 text-status-emerald font-semibold"><span className="material-symbols-outlined text-[16px]">verified</span> Official Partner</span>
+<span className="flex items-center gap-1"><span translate="no" className="notranslate material-symbols-outlined text-[16px]">airline_seat_recline_normal</span> British Airways</span>
+<span className="flex items-center gap-1 text-status-emerald font-semibold"><span translate="no" className="notranslate material-symbols-outlined text-[16px]">verified</span> Official Partner</span>
 </div>
 <BookButton airline="British Airways" route="Mumbai → London" price="₹42,900" label="Book Direct with BA" />
 </div>
@@ -121,7 +121,7 @@ function Bookings() {
 <h3 className="font-headline-md text-headline-md text-on-surface font-bold">Live Price Comparator</h3>
 <p className="font-body-sm text-body-sm text-secondary">Real-time fares synced across official airline desks</p>
 </div>
-<span className="material-symbols-outlined text-primary text-[24px]">analytics</span>
+<span translate="no" className="notranslate material-symbols-outlined text-primary text-[24px]">analytics</span>
 </div>
 <div className="flex flex-col gap-3">
 {/* Airline Row 1 */}
