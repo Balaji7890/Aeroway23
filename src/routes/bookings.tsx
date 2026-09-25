@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AppShell } from "@/components/AppShell";
 import { BookButton } from "@/components/BookButton";
+import { FlightLookup } from "@/components/FlightLookup";
 
 export const Route = createFileRoute("/bookings")({
   head: () => ({
