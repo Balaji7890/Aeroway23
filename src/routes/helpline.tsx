@@ -38,6 +38,19 @@ function Helpline() {
 <button className="px-3.5 py-1.5 rounded-full bg-pure-white text-secondary font-label-md shrink-0 shadow-[0_2px_8px_rgba(18,35,63,0.04)] hover:bg-surface-container-low transition-all">Medical</button>
 </div>
 </div>
+{/* Live flight status lookup */}
+<div className="bg-pure-white p-space-md rounded-2xl shadow-[0_4px_12px_-2px_rgba(18,35,63,0.05)] flex flex-col gap-space-sm">
+<div className="flex items-center gap-space-sm">
+<div className="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary shrink-0">
+<span className="material-symbols-outlined text-[20px]">flight_takeoff</span>
+</div>
+<div className="flex flex-col min-w-0">
+<h3 className="font-headline-sm text-headline-sm text-on-surface truncate">Check a live flight</h3>
+<p className="font-body-sm text-on-surface-variant truncate">Real-time gate, terminal, delay and baggage belt</p>
+</div>
+</div>
+<FlightLookup placeholder="Flight number (EK501) or route (MAA to DXB)" chips={["EK501", "AI102", "MAA to DXB"]} />
+</div>
 {/* Emergency Assistance Banner (Delightful High-Priority Card) */}
 <div className="bg-gradient-to-br from-error-container/60 via-pure-white to-pure-white p-space-md rounded-2xl shadow-[0_8px_24px_-4px_rgba(18,35,63,0.08)] flex flex-col gap-space-md relative overflow-hidden">
 <div className="absolute -right-6 -bottom-6 w-28 h-28 bg-error/10 rounded-full blur-xl pointer-events-none"></div>
